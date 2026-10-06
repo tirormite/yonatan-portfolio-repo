@@ -40,3 +40,7 @@ git push -u origin main
 
 1. Add photos to `images/<slug>/` named `01.jpg`, `02.jpg`, ... with matching `01-t.jpg` thumbnails (about 800 px wide).
 2. Add an entry to the `PROJECTS` array in `index.html`: `R('<slug>', <number of photos>)` lists the photos. Add `video` and `poster` for a video.
+
+## Contact details
+
+Phone, email and the Telegram link are in the `#contact` section of `index.html`. The contact form has no server: on submit it opens the visitor's email app with the message filled in, addressed to the email in the form script. To receive messages directly in the page without an email app, connect the form to a form service such as Formspree or Netlify Forms.
