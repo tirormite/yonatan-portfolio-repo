@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yonatan Mitiku — Architectural Portfolio</title>
+<meta property="og:title" content="Yonatan Mitiku — Architectural Portfolio"><meta property="og:image" content="images/yonatan.jpg"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2712%27 fill=%27%23232020%27/%3E%3Ctext x=%2732%27 y=%2743%27 font-size=%2728%27 font-family=%27sans-serif%27 font-weight=%27700%27 text-anchor=%27middle%27 fill=%27%23d2b068%27%3EYM%3C/text%3E%3C/svg%3E"><meta name="description" content="Architecture, interior design and 3D visualization portfolio of Yonatan Mitiku, B.Sc. in Architecture, Jimma University.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f2ee;--bg2:#fff;--ink:#1d1a1a;--mute:#6b6560;--line:#d9d4cc;--gold:#9a7a2e;--gold-bar:#b8923a;--nav:rgba(244,242,238,.9)}
+:root[data-theme=dark]{--bg:#232020;--bg2:#2c2929;--ink:#f3f0ea;--mute:#a8a29a;--line:#403b3b;--gold:#d2b068;--gold-bar:#c9a85c;--nav:rgba(35,32,32,.9)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:var(--bg);color:var(--ink);font:400 1rem/1.65 "DM Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:"Space Grotesk","DM Sans",sans-serif;line-height:1.1;letter-spacing:-.01em}
+img,video{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--gold-bar);color:#111;padding:8px 14px;z-index:99}.skip:focus{left:8px}
+.wrap{width:min(1180px,100% - 2.5rem);margin-inline:auto}
+section{padding:5.5rem 0}
+.h2{font-size:clamp(2rem,4.5vw,3rem);font-weight:700;margin-bottom:.5rem}
+.lead{color:var(--mute);max-width:56ch}
+/* nav */
+header{position:sticky;top:0;z-index:20;background:var(--nav);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font:700 1.1rem "Space Grotesk",sans-serif;text-decoration:none}
+nav ul{display:flex;gap:1.75rem;list-style:none;padding:0;align-items:center}
+nav a{text-decoration:none;color:var(--mute);font-weight:500;font-size:.95rem;padding:.4rem 0;border-bottom:2px solid transparent}
+nav a:hover{color:var(--ink);border-color:var(--gold-bar)}
+.icon-btn{background:none;border:1px solid var(--line);color:var(--ink);width:38px;height:38px;border-radius:50%;cursor:pointer;font-size:1rem}
+.icon-btn:hover{border-color:var(--gold-bar)}
+.menu{display:none}
+@media(max-width:760px){.menu{display:inline-block}nav{position:absolute;top:64px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--line);display:none}nav.open{display:block}nav ul{flex-direction:column;align-items:flex-start;padding:1rem 1.25rem 1.25rem;gap:.9rem}}
+/* hero */
+#home{min-height:calc(100svh - 64px);display:grid;align-items:center;position:relative;padding:4rem 0;background:radial-gradient(60% 70% at 15% 0%,rgba(201,168,92,.14),transparent 70%)}
+#home h1{font-size:clamp(2.8rem,10vw,7.5rem);font-weight:700;text-transform:uppercase;max-width:11ch}
+#home p{margin:1.5rem 0 2.25rem;font-size:1.2rem;color:var(--mute);max-width:36ch}
+.btn{display:inline-block;background:var(--gold-bar);color:#18140d;font-weight:700;padding:.9rem 1.6rem;border-radius:4px;text-decoration:none;border:0;cursor:pointer;font-size:1rem}
+.btn:hover{filter:brightness(1.08)}
+.rule{width:min(40vw,320px);height:2px;background:var(--ink);margin-bottom:2.5rem}
+/* works */
+.tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin:1.75rem 0 2.25rem}
+.tab{background:none;color:var(--mute);border:1px solid var(--line);padding:.5rem 1.1rem;border-radius:99px;cursor:pointer;font:500 .95rem "DM Sans",sans-serif}
+.tab[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.75rem}
+.card{background:var(--bg2);border:1px solid var(--line);border-radius:6px;overflow:hidden;display:flex;flex-direction:column;text-align:left;color:inherit;cursor:pointer;padding:0;font:inherit}
+.card .ph{aspect-ratio:4/3;overflow:hidden;position:relative;background:var(--line)}
+.card img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.card:hover img{transform:scale(1.04)}
+.card .n{position:absolute;right:10px;bottom:10px;background:rgba(20,18,18,.78);color:#fff;font-size:.8rem;padding:2px 9px;border-radius:99px}
+.card .b{padding:1.2rem 1.3rem 1.4rem}
+.card h3{font-size:1.3rem;margin-bottom:.4rem}
+.card p{color:var(--mute);font-size:.93rem}
+.card .m{margin-top:.9rem;font-size:.85rem;color:var(--gold)}
+.card .v{margin-top:1rem;font-weight:700;font-size:.92rem}
+/* about */
+.about{display:grid;grid-template-columns:minmax(240px,380px) 1fr;gap:3.5rem;align-items:start}
+.about .photo{aspect-ratio:3/4;width:100%;background:var(--bg2);border:1px solid var(--line)}
+.about .photo img{width:100%;height:100%;object-fit:contain}
+.about h3{font-size:1.5rem;margin:2.5rem 0 1rem}
+.about h2+.role{color:var(--gold);font-weight:500;margin-bottom:1.25rem}
+.edu,.job{border-left:2px solid var(--gold-bar);padding-left:1.1rem;margin-bottom:1.4rem}
+.edu b,.job b{display:block;font-size:1.05rem}
+.edu span,.job span{color:var(--mute);font-size:.93rem;display:block}
+.bars{display:grid;grid-template-columns:repeat(2,1fr);gap:1.1rem 2rem}
+.bar-row{display:flex;justify-content:space-between;font-size:.9rem;font-weight:500}
+.track{height:5px;background:var(--line);border-radius:9px;margin-top:6px;overflow:hidden}.track i{display:block;height:100%;background:var(--gold-bar)}
+.skills{list-style:none;padding:0;display:grid;gap:.55rem}
+.skills li{padding-left:1.3rem;position:relative}.skills li:before{content:"";position:absolute;left:0;top:.7em;width:7px;height:7px;background:var(--gold-bar);border-radius:50%}
+@media(max-width:860px){.about{grid-template-columns:1fr;gap:2rem}.about .photo{max-width:380px}.bars{grid-template-columns:1fr}}
+/* references */
+.refs{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:2rem}
+.ref{border:1px solid var(--line);background:var(--bg2);padding:1.5rem;border-radius:6px}
+.ref h3{font-size:1.15rem}.ref .r{color:var(--gold);margin-bottom:.8rem}
+.ref a{display:block;text-decoration:none;color:var(--mute)}.ref a:hover{color:var(--ink)}
+footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--mute);font-size:.9rem}
+/* project detail */
+#detail{position:fixed;inset:0;background:var(--bg);z-index:40;overflow-y:auto;display:none}
+#detail.on{display:block;animation:in .25s ease-out}
+@keyframes in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.dhead{position:sticky;top:0;background:var(--nav);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:2}
+.dhead .bar{gap:1rem}
+.back{background:none;border:1px solid var(--line);color:var(--ink);padding:.5rem 1rem;border-radius:99px;cursor:pointer;font:500 .95rem "DM Sans",sans-serif}
+.back:hover{border-color:var(--gold-bar)}
+.dbody{padding:3rem 0 5rem}
+.dbody h2{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:700}
+.dbody .desc{max-width:62ch;color:var(--mute);font-size:1.1rem;margin:1rem 0 1.75rem}
+dl.meta{display:flex;flex-wrap:wrap;gap:1rem 3rem;padding:1.1rem 0;border-block:1px solid var(--line);margin-bottom:2.5rem}
+dl.meta dt{font-size:.82rem;color:var(--mute)}dl.meta dd{font-weight:700;font-family:"Space Grotesk",sans-serif;font-size:1.15rem}
+.dbody h3{font-size:1.4rem;margin:3rem 0 1.25rem}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:1rem}
+.gal button{padding:0;border:0;background:var(--line);cursor:zoom-in;aspect-ratio:3/2;overflow:hidden;border-radius:4px}
+.gal.pan{grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}.gal.pan button{aspect-ratio:1825/1289}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .4s}.gal button:hover img{transform:scale(1.03)}
+.dbody video{width:100%;border-radius:6px;background:#000;max-height:80vh}
+/* lightbox */
+#lb{position:fixed;inset:0;background:rgba(10,9,9,.95);z-index:60;display:none;align-items:center;justify-content:center;flex-direction:column;padding:3.5rem 1rem 2.5rem}
+#lb.on{display:flex}
+#lb img{max-height:100%;max-width:100%;object-fit:contain}
+#lb button{position:absolute;background:rgba(255,255,255,.12);color:#fff;border:0;width:46px;height:46px;border-radius:50%;font-size:1.4rem;cursor:pointer}
+#lb button:hover{background:rgba(255,255,255,.25)}
+#lb .x{top:12px;right:12px}#lb .p{left:12px;top:50%}#lb .nx{right:12px;top:50%}
+#lb .c{position:absolute;bottom:10px;color:#cfc9c0;font-size:.9rem}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header><div class="wrap bar">
+ <a class="brand" href="#home">Yonatan Mitiku</a>
+ <nav id="nav" aria-label="Main"><ul>
+  <li><a href="#home">Home</a></li><li><a href="#my-works">My Works</a></li><li><a href="#about-me">About Me</a></li><li><a href="#references">References</a></li>
+  <li><button class="icon-btn" id="theme" aria-label="Toggle light and dark theme">🌙</button></li>
+ </ul></nav>
+ <button class="icon-btn menu" id="menu" aria-label="Open menu" aria-expanded="false">☰</button>
+</div></header>
+
+<main id="main">
+<section id="home"><div class="wrap">
+ <div class="rule"></div>
+ <h1>Architectural Portfolio</h1>
+ <p>Crafting innovative spaces that blend functionality with aesthetic beauty.</p>
+ <a class="btn" href="#my-works">View My Works</a>
+</div></section>
+
+<section id="my-works"><div class="wrap">
+ <h2 class="h2">My Works</h2>
+ <p class="lead">Exterior and interior projects. Select a project to see its details, videos and every photo.</p>
+ <div class="tabs" role="group" aria-label="Filter projects">
+  <button class="tab" data-f="all" aria-pressed="true">All</button>
+  <button class="tab" data-f="interior" aria-pressed="false">Interiors</button>
+  <button class="tab" data-f="exterior" aria-pressed="false">Exteriors</button>
+ </div>
+ <div class="grid" id="grid"></div>
+</div></section>
+
+<section id="about-me"><div class="wrap about">
+ <div class="photo"><img src="images/yonatan.jpg" alt="Portrait of Yonatan Mitiku" width="960" height="1280"></div>
+ <div>
+  <h2 class="h2">Yonatan Mitiku</h2>
+  <p class="role">Architecture, interior design &amp; 3D visualization</p>
+  <p>B.Sc. in Architecture from Jimma University (CGPA 3.31/4.00). Passionate about innovative design that blends functionality with aesthetic beauty. Experienced in architectural, interior, and 3D visualization projects.</p>
+  <h3>Education</h3>
+  <div class="edu"><b>Jimma University</b><span>B.Sc. in Architecture</span><span>CGPA 3.31 / 4.00</span></div>
+  <h3>Experience</h3>
+  <div class="job"><b>Bluelight Consultancy</b><span>3D Rendering &amp; Working Drawings</span><span>July 1, 2016 E.C – Present</span><span>Designed mixed-use buildings and interiors, produced 3D renderings and working drawings.</span><span>Supervisor: Engineer Sintayehu Melese · +251 91 303 2311</span></div>
+  <h3>Software skills</h3>
+  <div class="bars" id="bars"></div>
+  <h3>What I do</h3>
+  <ul class="skills">
+   <li>Preparing architectural and working drawings</li><li>Conducting site visits and taking site measurements</li><li>Preparing detailed construction drawings</li><li>Preparing HVAC, sanitary, and electrical drawings</li><li>Preparing design presentations</li><li>Preparing furniture schedules</li><li>Creating 3D models &amp; renderings</li>
+  </ul>
+ </div>
+</div></section>
+
+<section id="references"><div class="wrap">
+ <h2 class="h2">References</h2>
+ <p class="lead">People who can speak about my academic and project work.</p>
+ <div class="refs">
+  <div class="ref"><h3>Mr. Degaga Abraham Tiruneh</h3><p class="r">Head, School of Architecture</p><a href="tel:0921178121">0921178121</a><a href="mailto:degagaabrh889@gmail.com">degagaabrh889@gmail.com</a></div>
+  <div class="ref"><h3>Mr. Berhanu Taye Zewdie</h3><p class="r">Final Thesis Advisor</p><a href="tel:0910127348">0910127348</a><a href="mailto:berhanutaye1@gmail.com">berhanutaye1@gmail.com</a></div>
+ </div>
+</div></section>
+</main>
+<footer><div class="wrap">© 2026 Yonatan Mitiku</div></footer>
+
+<div id="detail" role="dialog" aria-modal="true" aria-labelledby="dt"><div class="dhead"><div class="wrap bar"><button class="back" id="close">← Back to works</button><span class="brand">Yonatan Mitiku</span></div></div><div class="wrap dbody" id="dbody"></div></div>
+<div id="lb" role="dialog" aria-label="Photo viewer"><button class="x" aria-label="Close photo">✕</button><button class="p" aria-label="Previous photo">‹</button><img alt=""><button class="nx" aria-label="Next photo">›</button><div class="c"></div></div>
+
+<script>
+const R=(s,n,t)=>Array.from({length:n},(_,i)=>`images/${s}/${String(i+1).padStart(2,'0')}`);
+const PROJECTS=[
+ {id:'hospital',t:'Jimma Primary Hospital',type:'exterior',d:'A fully equipped primary hospital with efficient circulation, dedicated care units, and a calming environment for patients & staff.',y:'2026',l:'Jimma',a:'3,820 m²',img:R('hospital',9),video:'video/primary-hospital.mp4',poster:'video/primary-hospital.jpg',panel:R('hospital-panel',14)},
+ {id:'stadium',t:'Stadium',type:'exterior',d:'A large-scale multi-purpose stadium with a bold structural form, spectator comfort, and strong contextual integration.',y:'2025',l:'Addis Ababa',a:'45,000 m²',img:R('stadium',9)},
+ {id:'mixed-use-g6',t:'Mixed-Use, G+6',type:'exterior',d:'A contemporary G+6 mixed-use development seamlessly integrating ground-level retail, corporate workspaces, and upper-level residences.',y:'2025',l:'Halaba Kulito',a:'260 m²',img:R('mixed-use-g6',3),video:'video/mixed-use-g6.mp4',poster:'video/mixed-use-g6.jpg'},
+ {id:'mixed-use-g4',t:'Mixed-Use, G+4',type:'exterior',d:'A sophisticated G+4 mixed-use development with a refined architectural profile, seamlessly integrating retail, residential, and corporate spaces.',y:'2026',l:'Halaba Kulito',a:'245 m²',img:R('mixed-use-g4',3)},
+ {id:'divine-beauty',t:'Divine Beauty Salon',type:'interior',d:'A bold salon interior in terracotta and cream with sculpted mirrors, a curved reception desk, and separate stations for hair, nails, pedicure and makeup.',img:R('divine-beauty',10),video:'video/divine-beauty.mp4',poster:'video/divine-beauty.jpg'},
+ {id:'bloom-beauty',t:'Bloom Beauty Salon',type:'interior',d:'An elegant, contemporary beauty salon featuring a sophisticated neutral palette and optimized zoning for premium wellness and styling.',y:'2025',l:'Jimma',a:'70 m²',img:R('bloom-beauty',11)},
+ {id:'guest-house',t:'Guest House',type:'interior',d:'A modern guest house interior featuring a warm, neutral palette, clean lines, and an inviting layout optimized for comfortable guest accommodation.',y:'2023',l:'Halaba Kulito',a:'52 m²',img:R('guest-house',3),video:'video/guest-house.mp4',poster:'video/guest-house.jpg'},
+ {id:'hotel-apartments',t:'Apartments',type:'interior',d:'A luxury hotel bedroom interior concept with warm tones, refined furnishings, and an inviting atmosphere for guests.',y:'2024',l:'Jimma',a:'52 m²',img:R('hotel-apartments',10)},
+ {id:'open-plan-apartment',t:'Open-Plan Apartment',type:'interior',d:'A light apartment interior with connected living, dining and kitchen areas, a calm grey and white palette, and a restful bedroom and bathroom.',img:R('apartments',11)},
+ {id:'residence',t:'Residential Apartment',type:'interior',d:'A residential apartment interior with a soft neutral palette, marble accents, and a layout planned for comfortable everyday living.',img:R('residence',6)},
+ {id:'office',t:'Executive Office',type:'interior',d:'An executive office interior with built-in timber shelving, a meeting table and a lounge corner, finished in warm taupe and brown tones.',img:R('office',5)}
+];
+const SOFT=[['AutoCAD',90],['ArchiCAD',85],['Revit',95],['Lumion',95],['D5 Render',95],['SketchUp',88],['Enscape',80],['Adobe Illustrator',90],['Adobe Photoshop',75]];
+const $=s=>document.querySelector(s),th=i=>i+'-t.jpg',fu=i=>i+'.jpg';
+$('#bars').innerHTML=SOFT.map(([n,v])=>`<div><div class="bar-row"><span>${n}</span><span>${v}%</span></div><div class="track"><i style="width:${v}%"></i></div></div>`).join('');
+function grid(f){$('#grid').innerHTML=PROJECTS.filter(p=>f=='all'||p.type==f).map(p=>`<button class="card" data-id="${p.id}"><div class="ph"><img src="${th(p.img[0])}" alt="${p.t}" loading="lazy"><span class="n">${p.img.length+(p.panel?p.panel.length:0)} photos${p.video?' + video':''}</span></div><div class="b"><h3>${p.t}</h3><p>${p.d}</p>${p.y?`<div class="m">${p.y} · ${p.l} · ${p.a}</div>`:''}<div class="v">View project</div></div></button>`).join('')}
+grid('all');
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.setAttribute('aria-pressed',x==b));grid(b.dataset.f)});
+let last=null,set=[],idx=0;
+function open(id,push=true){const p=PROJECTS.find(x=>x.id==id);if(!p)return;last=document.activeElement;
+ const gal=(arr,c='')=>`<div class="gal ${c}">${arr.map((s,i)=>`<button data-g="${c}" data-i="${i}" aria-label="Open photo ${i+1}"><img src="${th(s)}" alt="${p.t} photo ${i+1}" loading="lazy"></button>`).join('')}</div>`;
+ const meta=p.y?`<dl class="meta"><div><dt>Year</dt><dd>${p.y}</dd></div><div><dt>Location</dt><dd>${p.l}</dd></div><div><dt>Area</dt><dd>${p.a}</dd></div><div><dt>Category</dt><dd>${p.type=='interior'?'Interior':'Exterior'}</dd></div></dl>`:`<dl class="meta"><div><dt>Category</dt><dd>${p.type=='interior'?'Interior':'Exterior'}</dd></div></dl>`;
+ $('#dbody').innerHTML=`<h2 id="dt">${p.t}</h2><p class="desc">${p.d}</p>${meta}${p.video?`<video controls preload="metadata" poster="${p.poster}" src="${p.video}"></video><h3>Renders</h3>`:''}${gal(p.img)}${p.panel?`<h3>Presentation panel</h3>${gal(p.panel,'pan')}`:''}`;
+ $('#detail').classList.add('on');$('#detail').scrollTop=0;document.body.style.overflow='hidden';$('#close').focus();
+ if(push)history.pushState({p:id},'','#project-'+id);window._p=p}
+function close(push=true){$('#detail').classList.remove('on');document.body.style.overflow='';if(push&&location.hash.startsWith('#project-'))history.back();if(last)last.focus();const v=$('#dbody video');if(v)v.pause()}
+$('#grid').onclick=e=>{const c=e.target.closest('.card');if(c)open(c.dataset.id)};
+$('#close').onclick=()=>close();
+addEventListener('popstate',()=>{location.hash.startsWith('#project-')?open(location.hash.slice(9),false):close(false)});
+// lightbox
+const lb=$('#lb'),li=lb.querySelector('img');
+function show(){li.src=fu(set[idx]);$('#lb .c').textContent=`${idx+1} / ${set.length}`}
+$('#dbody').onclick=e=>{const b=e.target.closest('[data-i]');if(!b)return;const p=window._p;set=b.dataset.g?p.panel:p.img;idx=+b.dataset.i;show();lb.classList.add('on');lb.querySelector('.x').focus()};
+const step=d=>{idx=(idx+d+set.length)%set.length;show()},shut=()=>{lb.classList.remove('on')};
+lb.querySelector('.p').onclick=()=>step(-1);lb.querySelector('.nx').onclick=()=>step(1);lb.querySelector('.x').onclick=shut;
+lb.onclick=e=>{if(e.target==lb)shut()};
+addEventListener('keydown',e=>{if(lb.classList.contains('on')){if(e.key=='Escape')shut();if(e.key=='ArrowRight')step(1);if(e.key=='ArrowLeft')step(-1)}else if(e.key=='Escape'&&$('#detail').classList.contains('on'))close()});
+// theme + menu
+const tb=$('#theme');function setT(t){document.documentElement.dataset.theme=t;tb.textContent=t=='dark'?'🌙':'☀️'}
+setT(localStorage.getItem('t')||'dark');tb.onclick=()=>{const t=document.documentElement.dataset.theme=='dark'?'light':'dark';setT(t);try{localStorage.setItem('t',t)}catch(e){}};
+$('#menu').onclick=()=>{const o=$('#nav').classList.toggle('open');$('#menu').setAttribute('aria-expanded',o)};
+$('#nav').onclick=e=>{if(e.target.closest('a'))$('#nav').classList.remove('open')};
+if(location.hash.startsWith('#project-'))open(location.hash.slice(9),false);
+</script>
+</body>
+</html>
